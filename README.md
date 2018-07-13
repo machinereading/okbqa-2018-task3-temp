@@ -1,7 +1,7 @@
 # [OKBQA-7 Task3 : Multimodal Character Identification on Videos](http://7.okbqa.org/task/3)
 
 ## Task Definition
-This taks is to link each mention as a certain character in dialogue, given dialouge text and corresponding video. 
+This taks aims to link each mention to a certain character in dialogue, given dialouge text and corresponding video. 
 Let a mention be a nominal referring to a person (e.g., *she*, *mom*, *Judy*), and an entity be a character in a dialogue.
 
 ![Example](https://image.ibb.co/fm4iP8/multi_modal_character_identification.png)
