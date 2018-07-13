@@ -1,19 +1,15 @@
-# [OKBQA7 2018 Task3](http://7.okbqa.org/task/3)
+# [OKBQA-7 Task3 : Multimodal Character Identification on Videos](http://7.okbqa.org/task/3)
 
-## Multimodal Character Identification on Videos
-
+## Task Definition
 This taks is to link each mention as a certain character in dialogue, given dialouge text and corresponding video. 
 Let a mention be a nominal referring to a person (e.g., *she*, *mom*, *Judy*), and an entity be a character in a dialogue.
 
+![Example](https://image.ibb.co/fm4iP8/multi_modal_character_identification.png)
+
+## Introduction
 Character identification on text have been studied on Friends dataset and shown practical performance for identifying main characters([Chen et al., 2017](http://www.aclweb.org/anthology/K17-1023); [Choi&Chen, 2018](http://www.aclweb.org/anthology/S18-1007)).  However, these studies solved the problem in the form of entity linking on pre-defined characters. Thus, these modules couldn’t be applied to other than the Friends script unless module is re-trained on the newly constructed data. This task should be approached in the form of coreference resolution to be applied to arbitrary dialogue or video script. There is a study that introduces coreference resolution based approach for this task([Chen et al., 2017](http://www.aclweb.org/anthology/K17-1023)), but coreference resolution is difficult problem in NLP, so the performance is not practical(F1 : 75% for 9 main characters). 
 
 Therefore, if we expand the task to get not only text dialouge but also video as a input, the performance would be improved to a practical level by utilizing richer features.  This task is the extension of [SemEval2018 Task4](https://github.com/emorynlp/semeval-2018-task4). There are two main extensions. Firstly, it adds multi modality by utilizing video as a input. Secondly, the final module of this task could be applied to arbitrary dialogue or video script.
-
-![Example](https://image.ibb.co/fm4iP8/multi_modal_character_identification.png)
-
-## References
-
-* SemEval 2018 
 
 ## Task Organizers
 
@@ -104,3 +100,7 @@ A mention may include more than one word:
 ```
 
 The mapping between the entity ID and the actual character can be found in [`friends_entity_map.txt`](dat/friends_entity_map.txt).
+
+## Input
+
+## Output
