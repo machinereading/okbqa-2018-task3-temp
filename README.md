@@ -90,13 +90,13 @@ Here is a sample from the training dataset:
 A mention may include more than one word:
 
 ```
-/friends-s01e02  0  0  Ugly         JJ   (TOP(S(NP(ADJP*  ugly         -  -  Chandler_Bing  *  (380
-/friends-s01e02  0  1  Naked        JJ                *)  naked        -  -  Chandler_Bing  *  -
-/friends-s01e02  0  2  Guy          NNP               *)  Guy          -  -  Chandler_Bing  *  380)
-/friends-s01e02  0  3  got          VBD             (VP*  get          -  -  Chandler_Bing  *  -
-/friends-s01e02  0  4  a            DT              (NP*  a            -  -  Chandler_Bing  *  -
-/friends-s01e02  0  5  Thighmaster  NN               *))  thighmaster  -  -  Chandler_Bing  *  -
-/friends-s01e02  0  6  !            .                *))  !            -  -  Chandler_Bing  *  -
+/friends-s01e02  0  0  Ugly         JJ   (TOP(S(NP(ADJP*  ugly         -  -  Chandler_Bing  *  10:14-10:15 00006.npy (380
+/friends-s01e02  0  1  Naked        JJ                *)  naked        -  -  Chandler_Bing  *  10:14-10:15 00006.npy -
+/friends-s01e02  0  2  Guy          NNP               *)  Guy          -  -  Chandler_Bing  *  10:14-10:15 00006.npy 380)
+/friends-s01e02  0  3  got          VBD             (VP*  get          -  -  Chandler_Bing  *  10:14-10:15 00006.npy -
+/friends-s01e02  0  4  a            DT              (NP*  a            -  -  Chandler_Bing  *  10:14-10:15 00006.npy -
+/friends-s01e02  0  5  Thighmaster  NN               *))  thighmaster  -  -  Chandler_Bing  *  10:14-10:15 00006.npy -
+/friends-s01e02  0  6  !            .                *))  !            -  -  Chandler_Bing  *  10:14-10:15 00006.npy -
 ```
 
 The mapping between the entity ID and the actual character can be found in [`friends_entity_map.txt`](dat/friends_entity_map.txt).
