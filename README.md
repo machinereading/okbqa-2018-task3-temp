@@ -5,7 +5,7 @@
 This taks is to link each mention as a certain character in dialogue, given dialouge text and corresponding video. 
 Let a mention be a nominal referring to a person (e.g., *she*, *mom*, *Judy*), and an entity be a character in a dialogue. 
 
-![Example](https://image.ibb.co/h4y2j8/multi_modal_character_identification.png)
+![Example](https://image.ibb.co/fm4iP8/multi_modal_character_identification.png)
 
 ## References
 
