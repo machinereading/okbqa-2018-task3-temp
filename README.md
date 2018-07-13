@@ -18,22 +18,19 @@ Therefore, if we expand the task to get not only text dialouge but also video as
 * Giyeon Shin, SWRC, KAIST
 
 ## Datasets
+* This dataset is based on [SemEval2018 Task4 dataset](https://github.com/emorynlp/semeval-2018-task4). We added time and video information
+* Dataset will be released on 07/18
 
 The first two seasons of the TV show Friends are annotated for this task. 
 Each season consists of episodes, each episode comprises scenes, and each scene is segmented into sentences. 
 The followings describe the distributed datasets:
 
-* [friends.train.episode_delim.conll](dat/friends.train.episode_delim.conll): the training data where each episode is considered a document.
-* [friends.train.scene_delim.conll](data/friends.train.scene_delim.conll): the training data where each scene is considered a document.
+* [friends.train.episode_delim.conll](data/friends.train.episode_delim.conll): the training data where each episode is considered a document.
 * [friends.test.episode_delim.conll](data/friends.test.episode_delim.conll): the test data where each episode is considered a document.
-* [friends.test.scene_delim.conll](data/friends.test.scene_delim.conll): the test data where each scene is considered a document.
-* [friends.test.episode_delim.conll.nokey](data/friends.test.episode_delim.conll.nokey): same as [friends.test.episode_delim.conll](dat/friends.test.episode_delim.conll); the gold keys are replaced by `-1`.
-* [friends.test.scene_delim.conll.nokey](data/friends.test.scene_delim.conll.nokey): same as [friends.test.scene_delim.conll](dat/friends.test.scene_delim.conll); the gold keys are replaced by `-1`.
 
 No dedicated development set was distributed for this task; feel free to make your own development set for training or perform cross-validation on the training sets.
 
 ## Format
-(Dataset will be released on 07/18)
 All datasets follow the CoNLL 2012 Shared Task data format.
 Documents are delimited by the comments in the following format:
 
@@ -57,7 +54,7 @@ Each sentence is delimited by a new line ("\n") and each column indicates the fo
 1. Speaker: the speaker of this sentence.
 1. Named entity tag: the named entity tag of the word (auto generated).
 1. Time range: start/end time of the sentence on video.
-1. Video file : Pre-processed sequence of image file from the video corresponding to the sentence. This column represents the file name of the pickle object
+1. Video file: Pre-processed sequence of image file from the video corresponding to the sentence. This column represents the file name of the pickle object
 (Pickle object will be released on 08/01)
 1. Entity ID: the entity ID of the mention, that is consistent across all documents.
 
@@ -102,5 +99,27 @@ A mention may include more than one word:
 The mapping between the entity ID and the actual character can be found in [`friends_entity_map.txt`](dat/friends_entity_map.txt).
 
 ## Input
+You can use [friends.train.episode_delim.conll](data/friends.train.episode_delim.conll) as a training input, and [friends.test.episode_delim.conll](data/friends.test.episode_delim.conll) as a test input.
 
-## Output
+## Output and Evaluation
+Your output must consist of the entity ID of each mention, one per line, in the sequential order.  There are 6 mentions in the above example, which will generate the following output:
+
+```
+284
+284
+248
+248
+284
+380
+```
+
+Given this output, the evaluation script will measure,
+
+1. The label accuracy considering only 7 entities, that are the 6 main characters (Chandler, Joey, Monica, Phoebe, Rachel, and Ross) and all the others as one entity.
+1. The macro average between the F1 scores of the 7 entities.
+1. The label accuracy considering all entities, where characters not appearing in the tranining data are grouped as one entity, others.
+1. The macro average between the F1 scores of all entities.
+1. The F1 scores for 7 entities.
+1. The F1 scores for all entities.
+
+The following shows the command to run the [evaluate.py](src/evaluate.py):
