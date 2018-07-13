@@ -13,9 +13,9 @@ Therefore, if we expand the task to get not only text dialouge but also video as
 
 ## Task Organizers
 
-* Key-Sun Choi, SWRC, KAIST.
-* Kijong Han, SWRC, KAIST.
-* Giyeon Shin, SWRC, KAIST
+* Key-Sun Choi, [SWRC](http://semanticweb.kaist.ac.kr/), [KAIST](http://www.kaist.edu).
+* Kijong Han, [SWRC](http://semanticweb.kaist.ac.kr/), [KAIST](http://www.kaist.edu).
+* Giyeon Shin, [SWRC](http://semanticweb.kaist.ac.kr/), [KAIST](http://www.kaist.edu).
 
 ## Datasets
 * This dataset is based on [SemEval2018 Task4 dataset](https://github.com/emorynlp/semeval-2018-task4). We added time and video information
