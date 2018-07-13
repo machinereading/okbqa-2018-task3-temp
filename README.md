@@ -96,7 +96,7 @@ A mention may include more than one word:
 /friends-s01e02  0  6  !            .                *))  !            -  -  Chandler_Bing  *  10:14-10:15 00006.npy -
 ```
 
-The mapping between the entity ID and the actual character can be found in [`friends_entity_map.txt`](dat/friends_entity_map.txt).
+The mapping between the entity ID and the actual character can be found in [`friends_entity_map.txt`](data/friends_entity_map.txt).
 
 ## Input
 You can use [friends.train.episode_delim.conll](data/friends.train.episode_delim.conll) as a training input, and [friends.test.episode_delim.conll](data/friends.test.episode_delim.conll) as a test input.
