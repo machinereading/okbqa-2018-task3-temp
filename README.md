@@ -13,7 +13,7 @@ Therefore, if we expand the task to get not only dialouge text but also video as
 
 ## Task Organizers
 
-* Key-Sun Choi, [SWRC](http://semanticweb.kaist.ac.kr/), [KAIST](http://www.kaist.edu).
+* Prof. Key-Sun Choi, [SWRC](http://semanticweb.kaist.ac.kr/), [KAIST](http://www.kaist.edu).
 * Kijong Han, [SWRC](http://semanticweb.kaist.ac.kr/), [KAIST](http://www.kaist.edu).
 * Giyeon Shin, [SWRC](http://semanticweb.kaist.ac.kr/), [KAIST](http://www.kaist.edu).
 
