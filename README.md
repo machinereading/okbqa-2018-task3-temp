@@ -53,7 +53,8 @@ Each sentence is delimited by a new line ("\n") and each column indicates the fo
 1. Word sense: not provided (always `_`).
 1. Speaker: the speaker of this sentence.
 1. Named entity tag: the named entity tag of the word (auto generated).
-1. Time range: start/end time of the sentence on video.
+1. Start time: start time of the sentence on video. (millisecond)
+1. End time: start time of the sentence on video. (millisecond)
 1. Video file: Pre-processed sequence of image file from the video corresponding to the sentence. This column represents the file name of the pickle object
 (Pickle object will be released on 08/01)
 1. Entity ID: the entity ID of the mention, that is consistent across all documents.
@@ -61,39 +62,40 @@ Each sentence is delimited by a new line ("\n") and each column indicates the fo
 Here is a sample from the training dataset:
 
 ```
-/friends-s01e01  0  0  He     PRP   (TOP(S(NP*)    he     -  -  Monica_Geller   *  02:30-02:32 00005.npy (284)
-/friends-s01e01  0  1  's     VBZ          (VP*    be     -  -  Monica_Geller   *  02:30-02:32 00005.npy -
-/friends-s01e01  0  2  just   RB        (ADVP*)    just   -  -  Monica_Geller   *  02:30-02:32 00005.npy -
-/friends-s01e01  0  3  some   DT        (NP(NP*    some   -  -  Monica_Geller   *  02:30-02:32 00005.npy -
-/friends-s01e01  0  4  guy    NN             *)    guy    -  -  Monica_Geller   *  02:30-02:32 00005.npy (284)
-/friends-s01e01  0  5  I      PRP  (SBAR(S(NP*)    I      -  -  Monica_Geller   *  02:30-02:32 00005.npy (248)
-/friends-s01e01  0  6  work   VBP          (VP*    work   -  -  Monica_Geller   *  02:30-02:32 00005.npy -
-/friends-s01e01  0  7  with   IN     (PP*))))))    with   -  -  Monica_Geller   *  02:30-02:32 00005.npy -
-/friends-s01e01  0  8  !      .             *))    !      -  -  Monica_Geller   *  02:30-02:32 00005.npy -
+/friends-s01e01  0  0  He     PRP   (TOP(S(NP*)    he     -  -  Monica_Geller   *  55422	59256 00005.npy (284)
+/friends-s01e01  0  1  's     VBZ          (VP*    be     -  -  Monica_Geller   *  55422	59256 00005.npy -
+/friends-s01e01  0  2  just   RB        (ADVP*)    just   -  -  Monica_Geller   *  55422	59256 00005.npy -
+/friends-s01e01  0  3  some   DT        (NP(NP*    some   -  -  Monica_Geller   *  55422	59256 00005.npy -
+/friends-s01e01  0  4  guy    NN             *)    guy    -  -  Monica_Geller   *  55422	59256 00005.npy (284)
+/friends-s01e01  0  5  I      PRP  (SBAR(S(NP*)    I      -  -  Monica_Geller   *  55422	59256 00005.npy (248)
+/friends-s01e01  0  6  work   VBP          (VP*    work   -  -  Monica_Geller   *  55422	59256 00005.npy -
+/friends-s01e01  0  7  with   IN     (PP*))))))    with   -  -  Monica_Geller   *  55422	59256 00005.npy -
+/friends-s01e01  0  8  !      .             *))    !      -  -  Monica_Geller   *  55422	59256 00005.npy -
 ```
 ```
-/friends-s01e01  0  0  C'mon  VB   (TOP(S(S(VP*))  c'mon  -  -  Joey_Tribbiani  *  02:32-02:35 00006.npy -
-/friends-s01e01  0  1  ,      ,                 *  ,      -  -  Joey_Tribbiani  *  02:32-02:35 00006.npy -
-/friends-s01e01  0  2  you    PRP           (NP*)  you    -  -  Joey_Tribbiani  *  02:32-02:35 00006.npy (248)
-/friends-s01e01  0  3  're    VBP            (VP*  be     -  -  Joey_Tribbiani  *  02:32-02:35 00006.npy -
-/friends-s01e01  0  4  going  VBG            (VP*  go     -  -  Joey_Tribbiani  *  02:32-02:35 00006.npy -
-/friends-s01e01  0  5  out    RP           (PRT*)  out    -  -  Joey_Tribbiani  *  02:32-02:35 00006.npy -
-/friends-s01e01  0  6  with   IN             (PP*  with   -  -  Joey_Tribbiani  *  02:32-02:35 00006.npy -
-/friends-s01e01  0  7  the    DT             (NP*  the    -  -  Joey_Tribbiani  *  02:32-02:35 00006.npy -
-/friends-s01e01  0  8  guy    NN            *))))  guy    -  -  Joey_Tribbiani  *  02:32-02:35 00006.npy (284)
-/friends-s01e01  0  9  !      .               *))  !      -  -  Joey_Tribbiani  *  02:32-02:35 00006.npy -
+/friends-s01e01  0  0  C'mon  VB   (TOP(S(S(VP*))  c'mon  -  -  Joey_Tribbiani  *  59459	61586 00006.npy -
+/friends-s01e01  0  1  ,      ,                 *  ,      -  -  Joey_Tribbiani  *  59459	61586 00006.npy -
+/friends-s01e01  0  2  you    PRP           (NP*)  you    -  -  Joey_Tribbiani  *  59459	61586 00006.npy (248)
+/friends-s01e01  0  3  're    VBP            (VP*  be     -  -  Joey_Tribbiani  *  59459	61586 00006.npy -
+/friends-s01e01  0  4  going  VBG            (VP*  go     -  -  Joey_Tribbiani  *  59459	61586 00006.npy -
+/friends-s01e01  0  5  out    RP           (PRT*)  out    -  -  Joey_Tribbiani  *  59459	61586 00006.npy -
+/friends-s01e01  0  6  with   IN             (PP*  with   -  -  Joey_Tribbiani  *  59459	61586 00006.npy -
+/friends-s01e01  0  7  the    DT             (NP*  the    -  -  Joey_Tribbiani  *  59459	61586 00006.npy -
+/friends-s01e01  0  8  guy    NN            *))))  guy    -  -  Joey_Tribbiani  *  59459	61586 00006.npy (284)
+/friends-s01e01  0  9  !      .               *))  !      -  -  Joey_Tribbiani  *  59459	61586 00006.npy -
 ```
 
 A mention may include more than one word:
 
 ```
-/friends-s01e02  0  0  Ugly         JJ   (TOP(S(NP(ADJP*  ugly         -  -  Chandler_Bing  *  10:14-10:15 00006.npy (380
-/friends-s01e02  0  1  Naked        JJ                *)  naked        -  -  Chandler_Bing  *  10:14-10:15 00006.npy -
-/friends-s01e02  0  2  Guy          NNP               *)  Guy          -  -  Chandler_Bing  *  10:14-10:15 00006.npy 380)
-/friends-s01e02  0  3  got          VBD             (VP*  get          -  -  Chandler_Bing  *  10:14-10:15 00006.npy -
-/friends-s01e02  0  4  a            DT              (NP*  a            -  -  Chandler_Bing  *  10:14-10:15 00006.npy -
-/friends-s01e02  0  5  Thighmaster  NN               *))  thighmaster  -  -  Chandler_Bing  *  10:14-10:15 00006.npy -
-/friends-s01e02  0  6  !            .                *))  !            -  -  Chandler_Bing  *  10:14-10:15 00006.npy -
+/friends-s01e02  0  0  Ugly         JJ   (TOP(S(NP(ADJP*  ugly         -  -  Chandler_Bing  *  332158	334460 00006.npy (380
+/friends-s01e02  0  1  Naked        JJ                *)  naked        -  -  Chandler_Bing  *  332158	334460 00006.npy -
+/friends-s01e02  0  2  Guy          NNP               *)  Guy          -  -  Chandler_Bing  *  332158	334460 00006.npy 380)
+/friends-s01e02  0  3  got          VBD             (VP*  get          -  -  Chandler_Bing  *  332158	334460 00006.npy -
+/friends-s01e02  0  4  a            DT              (NP*  a            -  -  Chandler_Bing  *  332158	334460 00006.npy -
+/friends-s01e02  0  5  Thighmaster  NN               *))  thighmaster  -  -  Chandler_Bing  *  332158	334460 00006.npy -
+/friends-s01e02  0  6  !            .                *))  !            -  -  Chandler_Bing  *  332158	334460 00006.npy -
+
 ```
 
 The mapping between the entity ID and the actual character can be found in [`friends_entity_map.txt`](data/friends_entity_map.txt).
@@ -121,5 +123,3 @@ Given this output, the evaluation script will measure,
 1. The macro average between the F1 scores of all entities.
 1. The F1 scores for 7 entities.
 1. The F1 scores for all entities.
-
-The following shows the command to run the [evaluate.py](src/evaluate.py):
