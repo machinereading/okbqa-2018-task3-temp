@@ -1,4 +1,4 @@
-# [OKBQA-7 Task3 : Multimodal Character Identification on Videos](http://7.okbqa.org/task/3)
+# [OKBQA-7 Task3 : Multimodal Character Identification on Videos](http://7.okbqa.org/hackathon/task/task3)
 
 ## Task Definition
 This task aims to link each mention to a certain character in dialogue based on given dialouge text and corresponding video. 
